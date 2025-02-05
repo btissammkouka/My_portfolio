@@ -34,14 +34,6 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-
-  <!-- Ajoutez ceci dans la section head -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function() {
-      emailjs.init("m1WxMqHpOpa-cEnZp");
-    })();
-  </script>
 </head>
 
 <body class="index-page">
@@ -370,9 +362,9 @@
         </div>
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4">
-            <div class="col-lg-5">
-              <div class="info-wrap">
+          <div class="row gy-4 justify-content-center">
+            <div class="col-12">
+              <div class="info-wrap d-flex flex-wrap justify-content-center gap-4">
                 <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                   <i class="bi bi-geo-alt flex-shrink-0"></i>
                   <div>
@@ -384,7 +376,7 @@
                 <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                   <i class="bi bi-telephone flex-shrink-0"></i>
                   <div>
-                    <h3>Call Us</h3>
+                    <h3>Call Me</h3>
                     <p>+212 76729-2602</p>
                   </div>
                 </div>
@@ -392,44 +384,19 @@
                 <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                   <i class="bi bi-envelope flex-shrink-0"></i>
                   <div>
-                    <h3>Email Us</h3>
+                    <h3>Email Me</h3>
                     <p>btissam.mk1000@gmail.com</p>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-lg-7">
-              <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                <div class="row gy-4">
-                  <div class="col-md-6">
-                    <label for="name" class="pb-2">Your Name</label>
-                    <input type="text" name="user_name" class="form-control" required>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label for="email" class="pb-2">Your Email</label>
-                    <input type="email" name="user_email" class="form-control" required>
-                  </div>
-
-                  <div class="col-md-12">
-                    <label for="subject" class="pb-2">Subject</label>
-                    <input type="text" name="subject" class="form-control" required>
-                  </div>
-
-                  <div class="col-md-12">
-                    <label for="message" class="pb-2">Message</label>
-                    <textarea name="message" class="form-control" rows="10" required></textarea>
-                  </div>
-
-                  <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                    <button type="submit">Send Message</button>
+                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                  <i class="bi bi-linkedin flex-shrink-0"></i>
+                  <div>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/btissam-m-kouka-a00225219/" target="_blank">Btissam M'KOUKA</a></p>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -1105,40 +1072,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const loading = this.querySelector('.loading');
-        const errorMessage = this.querySelector('.error-message');
-        const sentMessage = this.querySelector('.sent-message');
-        
-        const templateParams = {
-            from_name: this.querySelector('[name="user_name"]').value,
-            from_email: this.querySelector('[name="user_email"]').value,
-            subject: this.querySelector('[name="subject"]').value,
-            message: this.querySelector('[name="message"]').value,
-            to_name: 'Btissam'
-        };
-        
-        loading.style.display = 'block';
-        errorMessage.style.display = 'none';
-        sentMessage.style.display = 'none';
-
-        emailjs.send('service_j4gr12n', 'template_2d7mqia', templateParams)
-            .then(function() {
-                loading.style.display = 'none';
-                sentMessage.style.display = 'block';
-                document.getElementById('contact-form').reset();
-            }, function(error) {
-                loading.style.display = 'none';
-                errorMessage.textContent = error.text || 'An error occurred. Please try again later.';
-                errorMessage.style.display = 'block';
-                console.log('FAILED...', error);
-            });
-    });
-  </script>
 
 </body>
 
