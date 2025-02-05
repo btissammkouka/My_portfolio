@@ -1660,17 +1660,25 @@ section,
 /* Project Modal Styling */
 .project-slider {
   width: 100%;
-  height: 400px;
+  height: auto;
+  min-height: 200px;
+  max-height: 80vh;
 }
 
 .project-slider .swiper-slide {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
 
 .project-slider .swiper-slide img {
-  max-height: 400px;
-  width: auto;
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
   object-fit: contain;
+  border-radius: 8px;
 }
 
 .project-description {
@@ -1749,4 +1757,66 @@ section,
   left: 0;
   background-color: var(--accent-color);
   visibility: visible;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .project-slider {
+    height: auto;
+    min-height: 150px;
+  }
+
+  .project-slider .swiper-slide {
+    padding: 5px;
+  }
+
+  .project-slider .swiper-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+  }
+
+  .project-slider .video-slide {
+    height: auto;
+    padding: 0;
+  }
+
+  .project-slider .video-slide video {
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+  }
+
+  .modal-dialog {
+    margin: 10px;
+    padding: 0;
+  }
+
+  .modal-content {
+    border-radius: 10px;
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+
+  /* Portfolio items in grid */
+  .portfolio .portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+/* Additional responsive fixes */
+@media (max-width: 576px) {
+  .project-slider .swiper-slide img,
+  .project-slider .video-slide video {
+    max-height: 40vh;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    transform: scale(0.8);
+  }
 }
