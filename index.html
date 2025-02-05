@@ -80,7 +80,7 @@
             <div class="text-container">
               <h2>M'KOUKA BTISSAM</h2>
               <p>AI & Data Science Engineer</p>
-              <a href="#about" class="btn-get-started">About Me </a>
+              <a href="#about" class="btn-get-started">About Me</a>
             </div>
           </div>
         </div>
@@ -1072,6 +1072,36 @@
       </div>
     </div>
   </div>
+
+  <!-- Add this script before the closing body tag -->
+  <script>
+    // Stop all videos when any modal is closed
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('hide.bs.modal', function () {
+        const videos = this.querySelectorAll('video');
+        videos.forEach(video => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      });
+    });
+
+    // Stop videos when switching between slides
+    document.querySelectorAll('.project-slider').forEach(slider => {
+      const swiper = new Swiper(slider, {
+        // ... existing swiper config ...
+        on: {
+          slideChange: function () {
+            const videos = slider.querySelectorAll('video');
+            videos.forEach(video => {
+              video.pause();
+              video.currentTime = 0;
+            });
+          }
+        }
+      });
+    });
+  </script>
 
 </body>
 
