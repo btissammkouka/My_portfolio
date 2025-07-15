@@ -1363,13 +1363,61 @@ section,
 .portfolio .portfolio-info .preview-link,
 .portfolio .portfolio-info .details-link {
   color: var(--contrast-color);
-  font-size: 24px;
-  margin: 0 8px;
+  font-size: 12px;
+  margin: 0 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio .portfolio-info .preview-link i,
+.portfolio .portfolio-info .details-link i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
 }
 
 .portfolio .portfolio-info .preview-link:hover,
 .portfolio .portfolio-info .details-link:hover {
   color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-color);
+}
+
+/* Special styling for preview button - Soft purple */
+.portfolio .portfolio-info .preview-link {
+  background: linear-gradient(135deg, rgba(147, 112, 219, 0.8), rgba(147, 112, 219, 0.6));
+  color: white;
+  border-color: rgba(147, 112, 219, 0.3);
+}
+
+.portfolio .portfolio-info .preview-link:hover {
+  background: linear-gradient(135deg, #9370db, #8a6fd1);
+  color: white;
+  border-color: #9370db;
+}
+
+/* Special styling for details button - Soft coral */
+.portfolio .portfolio-info .details-link {
+  background: linear-gradient(135deg, rgba(255, 127, 80, 0.8), rgba(255, 127, 80, 0.6));
+  color: white;
+  border-color: rgba(255, 127, 80, 0.3);
+}
+
+.portfolio .portfolio-info .details-link:hover {
+  background: linear-gradient(135deg, #ff7f50, #ff6b47);
+  color: white;
+  border-color: #ff7f50;
 }
 
 .portfolio .portfolio-item:hover .portfolio-info {
